@@ -1,0 +1,55 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/static-build"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/",
+        "dest": "index.html"
+      },
+      {
+        "src": "/api/users/current",
+        "method": "GET",
+        "handler": "users.getCurrentUsers"
+      },
+      {
+        "src": "/api/users/",
+        "method": "POST",
+        "handler": "users.registerUser"
+      },
+      {
+        "src": "/api/users/login",
+        "method": "POST",
+        "handler": "users.loginUser"
+      },
+      {
+        "src": "/api/tasks/",
+        "method": "GET",
+        "handler": "tasks.getTasks"
+      },
+      {
+        "src": "/api/tasks/",
+        "method": "POST",
+        "handler": "tasks.setTask"
+      },
+      {
+        "src": "/api/tasks/:id",
+        "method": "PUT",
+        "handler": "tasks.updateTask"
+      },
+      {
+        "src": "/api/tasks/:id",
+        "method": "DELETE",
+        "handler": "tasks.deleteTask"
+      }  
+    ],
+    "env": {
+      "DATABASE_TYPE": "mongodb",
+      "DATABASE_URL": "mongodb+srv://newdb:avpathak@cluster0.i31qh.mongodb.net/test"
+    }
+  }
+  
