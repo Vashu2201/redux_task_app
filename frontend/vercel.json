@@ -47,6 +47,13 @@
         "handler": "tasks.deleteTask"
       }  
     ],
+    "cors": {
+    "allowedOrigins": ["http://example.com", "https://example.com"],
+    "allowedMethods": ["GET", "POST", "PUT", "DELETE"],
+    "allowedHeaders": ["Content-Type", "Authorization"],
+    "exposedHeaders": ["Content-Type", "Authorization"],
+    "maxAge": 3600
+  },
     "env": {
       "DATABASE_TYPE": "mongodb",
       "DATABASE_URL": "mongodb+srv://newdb:avpathak@cluster0.i31qh.mongodb.net/test"
